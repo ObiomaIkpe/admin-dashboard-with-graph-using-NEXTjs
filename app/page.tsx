@@ -1,5 +1,6 @@
 import DashboardCard from "@/components/dashboard/DashboardCard";
 import { Folder, MessageCircle, Newspaper, Users } from "lucide-react";
+import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 import PostTable from '@/components/posts/PostTable'
 
 export default function Home() {
@@ -32,6 +33,8 @@ export default function Home() {
       icon={<MessageCircle className="text-slate-blue" size={72}/>}
       />
     </div>
+
+    <AnalyticsChart />
 
     <PostTable title='the future of AI' limit={6}/>
   </> 

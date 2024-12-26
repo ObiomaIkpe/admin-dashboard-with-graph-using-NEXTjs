@@ -31,7 +31,7 @@ const Sidebar = () => {
 
       <CommandItem>
       <Newspaper className="mr-2 h-4 w-4" />
-      <Link href='/Posts'>Posts</Link>
+      <Link href='/posts'>Posts</Link>
       </CommandItem>
 
       <CommandItem>

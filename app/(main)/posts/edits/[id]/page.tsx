@@ -12,6 +12,8 @@ import posts from "@/data/posts";
 import React, { use } from "react";
 import { Button } from "@/components/ui/button";
 
+import { useToast } from "@/hooks/use-toast";
+
 
 
 
@@ -39,6 +41,12 @@ interface PostEditPageProps {
 
 
 const PostEditPage = ({params}: {params: Promise<{id: string}>}) => {   
+
+
+    // setting up the toast
+    const {toast} = useToast()
+
+
     const {id} = use(params)
     const post = posts.find((post) => post.id === id);   
   
@@ -59,7 +67,12 @@ const PostEditPage = ({params}: {params: Promise<{id: string}>}) => {
 
 
     const handleSubmit =(data: z.infer<typeof formSchema>) => {
-        console.log(data)
+        // console.log(data)
+
+        toast({
+            title: 'post has been updated successfully',
+            description: `updated by ${post?.author} on ${post?.date}`
+        })
     }
         
     return (

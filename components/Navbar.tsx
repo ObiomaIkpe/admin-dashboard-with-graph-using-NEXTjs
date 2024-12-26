@@ -3,6 +3,8 @@ import Link from "next/link"
 import logo from '../img/logo.png'
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 
+import { ThemeToggler } from "./ThemeToggler"
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,9 +24,10 @@ const Navbar = () => {
         <Image src={logo} alt="" width={40}/>
         </Link>
             
+      <div className="flex items-center">
+        <ThemeToggler />
 
-
-            <DropdownMenu>
+        <DropdownMenu>
   <DropdownMenuTrigger className="focus:outline-none">
   <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt='@shadcn'/>
@@ -45,6 +48,9 @@ const Navbar = () => {
     
   </DropdownMenuContent>
 </DropdownMenu>
+      </div>
+
+            
 
         
         </div>

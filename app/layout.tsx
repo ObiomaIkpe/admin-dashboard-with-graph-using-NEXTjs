@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-
+import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeProvider attribute='class' defaultTheme="light" enableSystem={false}
+        storageKey="dashboard-theme">
         <Navbar />
         <div className="flex">
 
@@ -41,6 +44,8 @@ export default function RootLayout({
         {children}
           </div>
         </div>
+        <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

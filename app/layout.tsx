@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "admin dashboard",
   description: "Admin dashboard with Next.js",
-};
+}; 
 
 export default function RootLayout({
   children,
